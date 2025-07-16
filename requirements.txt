@@ -1,0 +1,4 @@
+# Drive Letter Manager - Requirements
+# Nur PyInstaller wird benötigt, da Tkinter bereits in Python enthalten ist
+
+pyinstaller>=5.0
