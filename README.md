@@ -1,158 +1,159 @@
 # Drive Letter Manager
 
-Ein portables Windows-Programm zur einfachen Verwaltung von Laufwerksbuchstaben. Perfekt für Situationen, in denen nach einer Windows-Neuinstallation die Laufwerksbuchstaben nicht mehr stimmen.
+A portable Windows application for easy management of drive letters. Perfect for situations where drive letters don't match after a Windows reinstallation.
 
 ## 🚀 Features
 
-- **Portable**: Läuft direkt aus einer .exe-Datei ohne Installation
-- **Einfach**: Intuitive grafische Benutzeroberfläche
-- **Sicher**: Verwendet native Windows-Tools (diskpart)
-- **Kompatibel**: Funktioniert ab Windows 7
-- **Übersichtlich**: Zeigt alle Laufwerke mit Bezeichnungen an
-- **Benutzerfreundlich**: Dropdown-Menüs für einfache Auswahl
+- **Portable**: Runs directly from an .exe file without installation
+- **Simple**: Intuitive graphical user interface
+- **Safe**: Uses native Windows tools (diskpart)
+- **Compatible**: Works from Windows 7 onwards
+- **Clear**: Shows all drives with their labels
+- **User-friendly**: Dropdown menus for easy selection
+- **Bilingual**: German and English interface
 
-## 📋 Systemanforderungen
+## 📋 System Requirements
 
-- Windows 7 oder höher
-- Administratorrechte (für Laufwerksbuchstaben-Änderungen)
-- Keine zusätzlichen Abhängigkeiten erforderlich
+- Windows 7 or higher
+- Administrator rights (for drive letter changes)
+- No additional dependencies required
 
-## 🔧 Installation und Verwendung
+## 🔧 Installation and Usage
 
-### Option 1: Fertige .exe verwenden
-1. Laden Sie `DriveLetterManager.exe` herunter
-2. Starten Sie die Datei **als Administrator** (Rechtsklick → "Als Administrator ausführen")
-3. Das Programm zeigt alle verfügbaren Laufwerke in einer übersichtlichen Tabelle an
-4. **Klicken Sie in die Spalte "Neuer Buchstabe"** für das gewünschte Laufwerk
-5. **Wählen Sie aus dem Dropdown-Menü** den neuen Buchstaben aus
-6. **Wiederholen Sie dies** für weitere Laufwerke (Batch-Änderungen möglich)
-7. Klicken Sie auf **"Ausgewählte Änderungen durchführen"**
+### Option 1: Use the ready-made .exe
+1. Download `DriveLetterManager.exe` from the [Releases](https://github.com/BassBoost1981/DriveLetterManager/releases) page
+2. Start the file **as Administrator** (Right-click → "Run as administrator")
+3. The program displays all available drives in a clear table
+4. **Click in the "New Letter" column** for the desired drive
+5. **Select the new letter from the dropdown menu**
+6. **Repeat this** for additional drives (batch changes possible)
+7. Click **"Apply Changes"**
 
-### Option 2: Aus Quellcode kompilieren
+### Option 2: Compile from source code
 
-#### Voraussetzungen
-- Python 3.7 oder höher
+#### Prerequisites
+- Python 3.7 or higher
 - pip (Python Package Installer)
 
-#### Schritte
-1. Klonen oder laden Sie das Repository herunter
-2. Öffnen Sie eine Eingabeaufforderung im Projektordner
-3. Führen Sie das Build-Skript aus:
+#### Steps
+1. Clone or download the repository
+2. Open a command prompt in the project folder
+3. Run the build script:
    ```batch
    build_simple.bat
    ```
-4. Die fertige .exe finden Sie im `dist`-Ordner
+4. Find the finished .exe in the `dist` folder
 
-#### Manuelle Kompilierung
+#### Manual compilation
 ```batch
-# PyInstaller installieren
+# Install PyInstaller
 pip install pyinstaller
 
-# .exe erstellen
+# Create .exe
 pyinstaller --onefile --windowed --name "DriveLetterManager" drive_letter_manager.py
 ```
 
-## 🖥️ Benutzeroberfläche
+## 🖥️ User Interface
 
-Das Programm bietet eine intuitive, tabellenbasierte Benutzeroberfläche:
+The program offers an intuitive, table-based user interface:
 
-### 1. Laufwerksübersicht (Haupttabelle)
-- **Spalte 1**: Aktueller Buchstabe (z.B. C:, D:, E:)
-- **Spalte 2**: Laufwerksbezeichnung (z.B. System, Daten, Backup)
-- **Spalte 3**: Neuer Buchstabe (Dropdown-Menü zum Auswählen)
+### 1. Drive Overview (Main Table)
+- **Column 1**: Current letter (e.g., C:, D:, E:)
+- **Column 2**: Drive label (e.g., System, Data, Backup)
+- **Column 3**: New letter (dropdown menu for selection)
 
-### 2. Bedienung
-- **Klicken Sie in die Spalte "Neuer Buchstabe"** um ein Dropdown-Menü zu öffnen
-- **Wählen Sie den gewünschten neuen Buchstaben** aus der Liste
-- **Mehrere Änderungen möglich**: Sie können mehrere Laufwerke gleichzeitig ändern
-- **Button wird automatisch aktiviert** sobald Änderungen ausgewählt wurden
+### 2. Operation
+- **Click in the "New Letter" column** to open a dropdown menu
+- **Select the desired new letter** from the list
+- **Multiple changes possible**: You can change multiple drives simultaneously
+- **Button automatically activated** as soon as changes are selected
 
-### 3. Steuerungsbereich
-- **"Ausgewählte Änderungen durchführen"**: Führt alle markierten Änderungen durch
-- **"Aktualisieren"**: Lädt die Laufwerksliste neu
-- **"Beenden"**: Schließt das Programm
+### 3. Control Area
+- **"Apply Changes"**: Executes all marked changes
+- **"Refresh"**: Reloads the drive list
+- **"Exit"**: Closes the program
 
-### 4. Anweisungen
-Das Programm zeigt klare Anweisungen zur Bedienung direkt in der Oberfläche.
+### 4. Instructions
+The program shows clear operating instructions directly in the interface.
 
-## ⚠️ Wichtige Hinweise
+## ⚠️ Important Notes
 
-### Administratorrechte
-- Das Programm **muss als Administrator** gestartet werden
-- Ohne Admin-Rechte können keine Laufwerksbuchstaben geändert werden
-- Das Programm warnt Sie, falls Admin-Rechte fehlen
+### Administrator Rights
+- The program **must be started as Administrator**
+- Without admin rights, no drive letters can be changed
+- The program warns you if admin rights are missing
 
-### Sicherheit
-- Das Programm verwendet nur native Windows-Tools (diskpart, wmic)
-- Keine Manipulation von Registry oder kritischen Systemdateien
-- Alle Änderungen werden über offizielle Windows-APIs durchgeführt
+### Security
+- The program only uses native Windows tools (diskpart, wmic)
+- No manipulation of registry or critical system files
+- All changes are made through official Windows APIs
 
-### Einschränkungen
-- A: und B: sind normalerweise für Diskettenlaufwerke reserviert
-- Systemlaufwerke (meist C:) sollten mit Vorsicht geändert werden
-- Laufwerke, die gerade verwendet werden, können möglicherweise nicht geändert werden
+### Limitations
+- A: and B: are normally reserved for floppy drives
+- System drives (usually C:) should be changed with caution
+- Drives currently in use may not be changeable
 
-## 🐛 Fehlerbehebung
+## 🐛 Troubleshooting
 
-### "Administratorrechte erforderlich"
-**Lösung**: Starten Sie das Programm als Administrator
-- Rechtsklick auf die .exe → "Als Administrator ausführen"
+### "Administrator rights required"
+**Solution**: Start the program as Administrator
+- Right-click on the .exe → "Run as administrator"
 
-### "Fehler beim Ermitteln der Laufwerke"
-**Lösung**: 
-- Stellen Sie sicher, dass Windows Management Instrumentation (WMI) funktioniert
-- Starten Sie das Programm neu
-- Prüfen Sie, ob alle Laufwerke ordnungsgemäß angeschlossen sind
+### "Error determining drives"
+**Solution**:
+- Ensure Windows Management Instrumentation (WMI) is working
+- Restart the program
+- Check if all drives are properly connected
 
-### "Fehler beim Ändern des Laufwerksbuchstabens"
-**Mögliche Ursachen**:
-- Laufwerk wird gerade verwendet (schließen Sie alle Programme, die darauf zugreifen)
-- Neuer Buchstabe ist bereits vergeben
-- Systemlaufwerk kann nicht geändert werden
+### "Error changing drive letter"
+**Possible causes**:
+- Drive is currently in use (close all programs accessing it)
+- New letter is already assigned
+- System drive cannot be changed
 
-## 📁 Projektstruktur
+## 📁 Project Structure
 
 ```
 DriveLetterManager/
-├── drive_letter_manager.py    # Hauptprogramm
-├── requirements.txt           # Python-Abhängigkeiten
-├── build.bat                 # Build-Skript (mit Icon)
-├── build_simple.bat          # Einfaches Build-Skript
-├── README.md                 # Diese Dokumentation
-└── dist/                     # Kompilierte .exe (nach Build)
+├── drive_letter_manager.py    # Main program
+├── requirements.txt           # Python dependencies
+├── build.bat                 # Build script (with icon)
+├── build_simple.bat          # Simple build script
+├── README.md                 # This documentation
+└── dist/                     # Compiled .exe (after build)
     └── DriveLetterManager.exe
 ```
 
-## 🔄 Entwicklung
+## 🔄 Development
 
-### Code-Struktur
-- **DriveLetterManager**: Hauptklasse mit GUI und Logik
-- **get_drives()**: Ermittelt Laufwerke über wmic
-- **change_drive_letter()**: Ändert Buchstaben über diskpart
-- **setup_gui()**: Erstellt die Tkinter-Benutzeroberfläche
+### Code Structure
+- **DriveLetterManager**: Main class with GUI and logic
+- **get_drives()**: Determines drives via wmic
+- **change_drive_letter()**: Changes letters via diskpart
+- **setup_gui()**: Creates the Tkinter user interface
 
-### Erweiterungen
-Das Programm kann einfach erweitert werden:
-- Mehrsprachigkeit (Deutsch/Englisch)
-- Laufwerks-Icons
-- Erweiterte Laufwerksinformationen
-- Batch-Änderungen
+### Extensions
+The program can be easily extended:
+- ✅ Multilingual support (German/English)
+- Drive icons
+- Extended drive information
+- ✅ Batch changes
 
-## 📄 Lizenz
+## 📄 License
 
-MIT License - Siehe LICENSE-Datei für Details
+MIT License - See LICENSE file for details
 
-## 🤝 Beitragen
+## 🤝 Contributing
 
-Beiträge sind willkommen! Bitte:
-1. Forken Sie das Repository
-2. Erstellen Sie einen Feature-Branch
-3. Committen Sie Ihre Änderungen
-4. Erstellen Sie einen Pull Request
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Create a pull request
 
 ## 📞 Support
 
-Bei Problemen oder Fragen:
-- Erstellen Sie ein Issue im Repository
-- Beschreiben Sie das Problem detailliert
-- Geben Sie Ihre Windows-Version an
+For problems or questions:
+- Create an issue in the repository
+- Describe the problem in detail
+- Provide your Windows version
